@@ -95,14 +95,14 @@ class CommentInputAccessory: UIView {
         postLabel.leftAnchor.constraint(equalTo: textView.rightAnchor).isActive = true
         postLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -CommentInputAccessory.postOffset).isActive = true
         postLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -CommentInputAccessory.postOffset).isActive = true
-        postLabel.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
+        postLabel.setContentHuggingPriority(UILayoutPriority.required, for: .horizontal)
     }
     
     //---------------------------------------------------------------------
     // MARK: - Action methods
     //---------------------------------------------------------------------
     
-    func postTap() {
+    @objc func postTap() {
         if let delegate = delegate,
             let text = textView.text {
             delegate.postText(text)
